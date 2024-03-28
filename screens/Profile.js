@@ -3,8 +3,7 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity,
-  StyleSheet,
+  TouchableOpacity
 } from "react-native";
 import styles from "../style/ProfileStyle";
 import { ImagePicker, Permissions } from "expo";
@@ -93,7 +92,7 @@ const Profile = () => {
         />
       </View>
       <TouchableOpacity style={styles.saveButton} onPress={saveData}>
-        <Text style={styles.saveButtonText}>Save</Text>
+        <Text style={styles.saveButtonText}>Journey</Text>
       </TouchableOpacity>
     </View>
   );
