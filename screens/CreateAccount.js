@@ -15,7 +15,7 @@ import { auth } from "../firebase/Config";
 import { MaterialIcons } from "@expo/vector-icons";
 import styles from "../style/style";
 import * as ImagePicker from "expo-image-picker";
-import { Picker } from "@react-native-picker/picker";
+import { Picker } from "@react-native-picker/picker";  //for age
 
 export default function Register({ navigation }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

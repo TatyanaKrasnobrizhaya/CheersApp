@@ -1,5 +1,5 @@
-import { StyleSheet, Dimensions } from "react-native"; // Импортируем Dimensions
-import Constants from "expo-constants"; // Импортируем Constants
+import { StyleSheet, Dimensions } from "react-native"; 
+import Constants from "expo-constants"; 
 
 export default StyleSheet.create({
   container: {

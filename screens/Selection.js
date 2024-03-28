@@ -9,7 +9,7 @@ import {
   DatePickerAndroid,
   TimePickerAndroid,
 } from "react-native";
-import styles from "../style/SelectionStyle"; // Путь к вашим стилям
+import styles from "../style/SelectionStyle"; 
 import DateTimePicker from "@react-native-community/datetimepicker";
 
 export default function Selection() {
@@ -136,7 +136,7 @@ export default function Selection() {
     }
   };
 
-  // Конфигурация кликабельных фотографий
+  // click for photo
   const drinks = [
     { id: 1, image: require("../assets/logo.png") },
     { id: 2, image: require("../assets/logo.png") },
@@ -147,20 +147,19 @@ export default function Selection() {
     { id: 7, image: require("../assets/logo.png") },
     { id: 8, image: require("../assets/logo.png") },
     { id: 9, image: require("../assets/logo.png") },
-    // Добавьте остальные фотографии здесь
   ];
 
-  // Функция для обработки выбора напитка
+  // Function for processing the beverage selection
   const handleDrinkSelection = (drinkId) => {
     setSelectedDrink(drinkId);
   };
 
-  // Функция для обработки добавления напитка
+  // Function for processing the addition of a beverage
   const handleAddDrink = () => {
     // Ваш код для добавления напитка
     console.log("Selected drink:", selectedDrink);
     console.log("Selected date and time:", selectedDateTime);
-    // Здесь вы можете добавить логику для сохранения выбранного напитка и времени
+    // save
   };
 
   return (

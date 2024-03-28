@@ -33,7 +33,7 @@ const Profile = () => {
   };
 
   const saveData = () => {
-    // Здесь можно добавить логику для сохранения данных, например, в базу данных или хранилище
+    // save data
     console.log("Name:", name);
     console.log("Password:", password);
     console.log("Age:", age);

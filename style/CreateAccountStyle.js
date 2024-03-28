@@ -39,6 +39,6 @@ export default StyleSheet.create({
     marginTop: 10,
     marginBottom: 10,
     marginLeft: 10,
-    width: "90%", // Изменено на использование строки
+    width: "90%", 
   },
 });
