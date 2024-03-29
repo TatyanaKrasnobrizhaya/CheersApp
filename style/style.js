@@ -1,3 +1,9 @@
+//this code includes styles of two screens - CreateAccount and Login.
+// At the end of the file you will see which component the style belongs to. I made a big mistake when I started the project. 
+//The problem is that when separating the styles of the screens I have wrong styles. 
+//If you can fix it, it will be great, if not, we will solve this problem later. 
+
+
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -29,15 +35,7 @@ export default StyleSheet.create({
     marginLeft: 10,
     width: "90%",
   },
-  /*
-  deleteAccountButton: {
-    marginTop: 10,
-    marginBottom: 10,
-    marginLeft: 10,
-    width: "90%",
-    color: 'red',
-    backgroundColor: 'red'
-  },*/
+
   textInput: {
     borderWidth: 1,
     borderColor: "#afafaf",
@@ -93,8 +91,15 @@ export default StyleSheet.create({
   },
 });
 
+
+
+
+
+
+
+
 /*
-Login
+Login.js
  container: {
     flex: 0,
     backgroundColor: 'white',
@@ -133,6 +138,8 @@ Login
     width: "90%"
   },
 */
+
+
 /*
   CreateAccount
     container: {

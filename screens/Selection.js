@@ -6,11 +6,15 @@ import {
   TouchableOpacity,
   Button,
   Platform,
-  DatePickerAndroid,
-  TimePickerAndroid,
+  // DatePickerAndroid,
+  //TimePickerAndroid,
 } from "react-native";
-import styles from "../style/SelectionStyle"; 
+import styles from "../style/SelectionStyle";
 import DateTimePicker from "@react-native-community/datetimepicker";
+import { useNavigation } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+
+const Stack = createStackNavigator();
 
 export default function Selection() {
   const [selectedDrink, setSelectedDrink] = useState(null);
@@ -149,6 +153,8 @@ export default function Selection() {
     { id: 9, image: require("../assets/logo.png") },
   ];
 
+  const navigation = useNavigation();
+
   // Function for processing the beverage selection
   const handleDrinkSelection = (drinkId) => {
     setSelectedDrink(drinkId);
@@ -156,10 +162,14 @@ export default function Selection() {
 
   // Function for processing the addition of a beverage
   const handleAddDrink = () => {
-    // Ваш код для добавления напитка
     console.log("Selected drink:", selectedDrink);
     console.log("Selected date and time:", selectedDateTime);
     // save
+  };
+
+  // Function to navigate to the Cocktails screen
+  const goToCocktailsScreen = () => {
+    navigation.navigate("Cocktails"); // Navigate to the "Cocktails" screen
   };
 
   return (
@@ -180,6 +190,9 @@ export default function Selection() {
           </TouchableOpacity>
         ))}
       </View>
+      <TouchableOpacity style={styles.saveButton} onPress={goToCocktailsScreen}>
+        <Text style={styles.saveButtonText}>go to Coctails</Text>
+      </TouchableOpacity>
       <Text>Planned drinking time:</Text>
       <DateTimePicker
         testID="dateTimePicker"
@@ -189,7 +202,9 @@ export default function Selection() {
         display="default"
         onChange={onChange}
       />
-      <Button title="Add my drink" onPress={handleAddDrink} />
+      <TouchableOpacity style={styles.saveButton} onPress={handleAddDrink}>
+        <Text style={styles.saveButtonText}>Add my drink</Text>
+      </TouchableOpacity>
     </View>
   );
 }

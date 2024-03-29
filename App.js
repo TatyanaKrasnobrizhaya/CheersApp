@@ -1,3 +1,4 @@
+import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -8,6 +9,7 @@ import Selection from "./screens/Selection";
 import Maps from "./screens/Maps";
 import Contacts from "./screens/Contacts";
 import Profile from "./screens/Profile";
+import Coctails from "./screens/Coctails"; 
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -21,34 +23,48 @@ const MyTheme = {
   },
 };
 
-export default function App() {
+const App = () => {
   return (
     <NavigationContainer theme={MyTheme}>
-      <Tab.Navigator
-        sceneContainerStyle={{ backgroundColor: "transparent" }}
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => null,
-          tabBarActiveTintColor: "steelblue",
-          tabBarInactiveTintColor: "gray",
-        })}
-      >
-        <Tab.Screen
-          name="Login"
-          component={Login}
-          options={{ tabBarStyle: { display: "none" } }}
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Selection"
+          component={MainTabs}
+          options={{ headerShown: false }} // Hiding the navigation header
         />
-        <Tab.Screen
-          name="Register"
-          component={CreateAccount}
-          options={{ tabBarStyle: { display: "none" } }}
-        />
-        <Tab.Screen name="Selection" component={Selection} />
-
-        <Tab.Screen name="Calculator" component={Calculator} />
-        <Tab.Screen name="Maps" component={Maps} />
-        <Tab.Screen name="Contacts" component={Contacts} />
-        <Tab.Screen name="Profile" component={Profile} />
-      </Tab.Navigator>
+        <Stack.Screen name="Cocktails" component={Coctails} /> 
+      </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+const MainTabs = () => {
+  return (
+    <Tab.Navigator
+      sceneContainerStyle={{ backgroundColor: "transparent" }}
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => null,
+        tabBarActiveTintColor: "steelblue",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen
+        name="Login"
+        component={Login}
+        options={{ tabBarStyle: { display: "none" } }}
+      />
+      <Tab.Screen
+        name="Register"
+        component={CreateAccount}
+        options={{ tabBarStyle: { display: "none" } }}
+      />
+      <Tab.Screen name="Selection" component={Selection} />
+      <Tab.Screen name="Calculator" component={Calculator} />
+      <Tab.Screen name="Maps" component={Maps} />
+      <Tab.Screen name="Contacts" component={Contacts} />
+      <Tab.Screen name="Profile" component={Profile} />
+    </Tab.Navigator>
+  );
+};
+
+export default App;

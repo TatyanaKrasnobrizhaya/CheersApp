@@ -1,3 +1,6 @@
+//this file doesn't work at the moment. The main CreateAccount screen style is located in the style.js file
+
+/*
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
@@ -39,3 +42,5 @@ export default StyleSheet.create({
     width: "90%",
   },
 });
+
+*/

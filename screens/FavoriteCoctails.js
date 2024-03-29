@@ -1,11 +1,8 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, FlatList, Image } from "react-native";
-import styles from "../style/CoctailsStyle";
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import FavoriteCoctails from "../screens/FavoriteCoctails";
+import { View, Text, TextInput, FlatList } from "react-native";
+import styles from "../style/FavoriteCoctailsStyle";
 
-
-const Coctails = () => {
+const FavoriteCoctails = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [coctails, setCoctails] = useState([
     { id: "1", name: "Mojito", image: require("../assets/logo.png") },
@@ -13,19 +10,21 @@ const Coctails = () => {
     { id: "3", name: "Margarita", image: require("../assets/logo.png") },
   ]);
 
+  // Filter cocktails based on search query
+  const filteredCoctails = coctails.filter(coctail =>
+    coctail.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  // Render individual cocktail item
   const renderCoctailItem = ({ item }) => (
-    <View style={styles.coctailItem}>
-      <Image source={item.image} style={styles.coctailImage} />
+    <View>
       <Text>{item.name}</Text>
     </View>
   );
 
-  const filteredCoctails = coctails.filter((coctail) =>
-    coctail.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>My favourite cocktails</Text>
       <Text style={styles.title}>Search for a cocktail</Text>
       <TextInput
         style={styles.input}
@@ -42,19 +41,5 @@ const Coctails = () => {
   );
 };
 
-const Tab = createMaterialTopTabNavigator();
-
-const CoctailsNavigator = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="Coctails" component={Coctails} />
-      <Tab.Screen name="FavoriteCoctails" component={FavoriteCoctails} />
-    </Tab.Navigator>
-  );
-};
-
-export default CoctailsNavigator;
-
-
-
+export default FavoriteCoctails;
 

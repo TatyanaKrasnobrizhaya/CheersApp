@@ -43,4 +43,12 @@ export default StyleSheet.create({
     fontSize: 16,
     marginRight: 10,
   },
+  saveButton: {
+    backgroundColor: 'silver',
+    borderRadius: 8,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    marginTop: 20,
+  },
 });

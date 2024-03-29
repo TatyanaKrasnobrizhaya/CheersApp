@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import styles from "../style/ProfileStyle";
 import { ImagePicker, Permissions } from "expo";
 import { Picker } from "@react-native-picker/picker";
+import { useNavigation } from "@react-navigation/native"; 
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs"; // Importing a swipeable navigation component
+import Journey from "../screens/Journey";
+
+const Tab = createMaterialTopTabNavigator(); // Creating a swipeable navigation component
 
 const Profile = () => {
+  const navigation = useNavigation(); // Using the navigation function
+
   const [name, setName] = useState("John Doe");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState(null);
@@ -38,6 +40,8 @@ const Profile = () => {
     console.log("Age:", age);
     console.log("Hobbies:", hobbies);
     console.log("Favourite Drinks:", favouriteDrinks);
+    // Navigating to the Journey screen
+    navigation.navigate("Journey");
   };
 
   return (
@@ -91,11 +95,22 @@ const Profile = () => {
           onChangeText={setFavouriteDrinks}
         />
       </View>
-      <TouchableOpacity style={styles.saveButton} onPress={saveData}>
-        <Text style={styles.saveButtonText}>Journey</Text>
-      </TouchableOpacity>
     </View>
   );
 };
 
-export default Profile;
+const ProfileWithTabs = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        swipeEnabled: true, 
+      }}
+    >
+      <Tab.Screen name="ViewProfile" component={Profile} />
+      <Tab.Screen name="Journey" component={Journey} />
+    </Tab.Navigator>
+  );
+};
+
+export default ProfileWithTabs;
+
