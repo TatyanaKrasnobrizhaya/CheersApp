@@ -1,35 +1,13 @@
-//this file doesn't work at the moment. The main CreateAccount screen style is located in the style.js file
-
-/*
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    flex: 0,
-    backgroundColor: "white",
-    marginLeft: 10,
-    marginRight: 15,
+    flex: 1,
+    padding: 20,
     alignItems: "center",
-    justifyContent: "space-around",
-  },
-  headerItem: {
-    flexDirection: "row",
-    marginVertical: 10,
-    alignItems: "center",
-  },
-  logoutIcon: {
-    marginTop: 10,
-    marginLeft: 25,
-  },
-  photoContainer: {
-    marginBottom: 20,
-  },
-  photo: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
   },
   infoText: {
+    flex: 1,
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 10,
@@ -41,6 +19,24 @@ export default StyleSheet.create({
     marginLeft: 10,
     width: "90%",
   },
+  textInput: {
+    borderWidth: 1,
+    borderColor: "#afafaf",
+    width: "85%",
+    borderRadius: 5,
+    paddingHorizontal: 5,
+    paddingVertical: 5,
+    marginTop: 10,
+    marginLeft: 10,
+    fontSize: 15,
+  },
+  photoContainer: {
+    marginBottom: 20,
+  },
+  photo: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+  },
 });
 
-*/

@@ -5,9 +5,9 @@ import styles from "../style/ContactsStyle";
 const Contacts = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [friends, setFriends] = useState([
-    { id: "1", name: "John", image: require("../assets/logo.png") },
-    { id: "2", name: "Alice", image: require("../assets/logo.png") },
-    { id: "3", name: "Bob", image: require("../assets/logo.png") },
+    { id: "1", name: "John", image: require("../assets/Logo-.png") },
+    { id: "2", name: "Alice", image: require("../assets/Logo-.png") },
+    { id: "3", name: "Bob", image: require("../assets/Logo-.png") },
   ]);
 
   const renderFriendItem = ({ item }) => (

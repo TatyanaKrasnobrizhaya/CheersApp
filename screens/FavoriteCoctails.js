@@ -5,9 +5,9 @@ import styles from "../style/FavoriteCoctailsStyle";
 const FavoriteCoctails = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [coctails, setCoctails] = useState([
-    { id: "1", name: "Mojito", image: require("../assets/logo.png") },
-    { id: "2", name: "Martini", image: require("../assets/logo.png") },
-    { id: "3", name: "Margarita", image: require("../assets/logo.png") },
+    { id: "1", name: "Mojito", image: require("../assets/Logo-.png") },
+    { id: "2", name: "Martini", image: require("../assets/Logo-.png") },
+    { id: "3", name: "Margarita", image: require("../assets/Logo-.png") },
   ]);
 
   // Filter cocktails based on search query

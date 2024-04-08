@@ -13,13 +13,13 @@ import { logout, signUp } from "../components/Auth";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/Config";
 import { MaterialIcons } from "@expo/vector-icons";
-import styles from "../style/style";
+import styles from "../style/CreateAccountStyle";
 import * as ImagePicker from "expo-image-picker";
 import { Picker } from "@react-native-picker/picker";  //An age selection table can be made later. Where we will not enter the age but will SELECT it.
 
 export default function Register({ navigation }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [nickname, setNickname] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -65,8 +65,8 @@ export default function Register({ navigation }) {
   };
 
   const handlePressRegister = () => {
-    if (!nickname) {
-      Alert.alert("Nickname is required");
+    if (!name) {
+      Alert.alert("Name is required");
     } else if (!email) {
       Alert.alert("Email is required");
     } else if (!password) {
@@ -77,10 +77,10 @@ export default function Register({ navigation }) {
     } else if (password !== confirmPassword) {
       Alert.alert("Passwords do not match");
     } else {
-      signUp(nickname, email, password, photo, age, hobbies, favoriteDrink);
+      signUp(name, email, password, photo, age, hobbies, favoriteDrink);
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          setNickname("");
+          setName("");
           setEmail("");
           setPassword("");
           setConfirmPassword("");
@@ -127,13 +127,13 @@ export default function Register({ navigation }) {
           <Text>Choose Photo</Text>
         </TouchableOpacity>
         <View style={styles.inputContainer}>
-          <Text style={styles.inputLabel}>Nickname</Text>
+          <Text style={styles.inputLabel}>Name</Text>
           <View style={styles.inputField}>
             <TextInput
               style={styles.textInput}
-              placeholder="Enter your nickname"
-              value={nickname}
-              onChangeText={(nickname) => setNickname(nickname.trim())}
+              placeholder="Enter your name"
+              value={name}
+              onChangeText={(name) => setName(name.trim())}
             />
           </View>
         </View>

@@ -8,9 +8,9 @@ import FavoriteCoctails from "../screens/FavoriteCoctails";
 const Coctails = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [coctails, setCoctails] = useState([
-    { id: "1", name: "Mojito", image: require("../assets/logo.png") },
-    { id: "2", name: "Martini", image: require("../assets/logo.png") },
-    { id: "3", name: "Margarita", image: require("../assets/logo.png") },
+    { id: "1", name: "Mojito", image: require("../assets/Logo-.png") },
+    { id: "2", name: "Martini", image: require("../assets/Logo-.png") },
+    { id: "3", name: "Margarita", image: require("../assets/Logo-.png") },
   ]);
 
   const renderCoctailItem = ({ item }) => (

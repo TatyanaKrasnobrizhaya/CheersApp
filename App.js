@@ -51,18 +51,18 @@ const MainTabs = () => {
       <Tab.Screen
         name="Login"
         component={Login}
-        options={{ tabBarStyle: { display: "none" } }}
+        options={{ tabBarStyle: { display: "none" }, headerShown: false }}
       />
       <Tab.Screen
         name="Register"
         component={CreateAccount}
-        options={{ tabBarStyle: { display: "none" } }}
+        options={{ tabBarStyle: { display: "none" }, headerShown: false }}
       />
-      <Tab.Screen name="Selection" component={Selection} />
-      <Tab.Screen name="Calculator" component={Calculator} />
-      <Tab.Screen name="Maps" component={Maps} />
-      <Tab.Screen name="Contacts" component={Contacts} />
-      <Tab.Screen name="Profile" component={Profile} />
+      <Tab.Screen name="Selection" component={Selection} options={{ headerShown: false }}/>
+      <Tab.Screen name="Calculator" component={Calculator} options={{ headerShown: false }}/>
+      <Tab.Screen name="Maps" component={Maps} options={{ headerShown: false }}/>
+      <Tab.Screen name="Contacts" component={Contacts} options={{ headerShown: false }}/>
+      <Tab.Screen name="Profile" component={Profile} options={{ headerShown: false }}/>
     </Tab.Navigator>
   );
 };

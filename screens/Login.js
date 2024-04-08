@@ -3,8 +3,7 @@ import { View, Text, TextInput, Alert, Button, Pressable, Image } from 'react-na
 import { logout, signIn } from '../components/Auth';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebase/Config';
-import { MaterialIcons } from '@expo/vector-icons';
-import styles from '../style/style';
+import styles from '../style/LoginStyle';
 import { useNavigation } from '@react-navigation/native'; // useNavigation
 
 export default function Login() {
@@ -40,66 +39,44 @@ export default function Login() {
     }
   }
 
-  const handlePressLogout = () => {
-    logout();
-  }
-
-  if (isLoggedIn) {
-    return (
-      <View style={styles.container}>
-        <View style={styles.headerItem}>
-          <Text style={styles.header}> Login</Text>
-          <Pressable style={styles.logoutIcon} onPress={handlePressLogout}>
-            <MaterialIcons name="logout" size={24} color="black" />
-          </Pressable>
-        </View>
-        <Text style={styles.infoText}>
-          You are logged in.
-        </Text>
-      </View>
-    )
-  } else {
-    return (
-      <View style={styles.container}>
-        <View style={styles.headerItem}>
-          <Text style={styles.header}>Login</Text>
-        </View>
-        <View style={styles.photoContainer}>
-          <Image
-            source={require('../assets/logo.png')}
-            style={styles.photo}
-          />
-        </View>
-        <Text style={styles.infoText}>Login to your account</Text>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter your email"
-          value={email}
-          onChangeText={(email) => setEmail(email.trim())}
-          keyboardType='email-address'
-          autoCapitalize='none'
+  return (
+    <View style={styles.container}>
+      <View style={styles.photoContainer}>
+        <Image
+          source={require('../assets/Logo-.png')}
+          style={styles.photo}
         />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter your password"
-          value={password}
-          onChangeText={(password) => setPassword(password)}
-          secureTextEntry={true}
-        />
-        <Pressable style={styles.buttonStyle}>
-          <Button
-            title="Login"
-            onPress={handlePressLogin}
-          />
-        </Pressable>
-        <Text style={styles.infoText}>Not having account yet? Create your cheer with me account and start meeting your friend for a drink!</Text>
-        <Pressable style={styles.buttonStyle}>
-          <Button
-            title="Register"
-            onPress={() => navigation.navigate('Register')}
-          />
-        </Pressable>
       </View>
-    )
-  }
+      <Text >User name</Text>
+      <TextInput
+        style={styles.textInput}
+        placeholder="Enter your email"
+        value={email}
+        onChangeText={(email) => setEmail(email.trim())}
+        keyboardType='email-address'
+        autoCapitalize='none'
+      />
+      <Text >Password</Text>
+      <TextInput
+        style={styles.textInput}
+        placeholder="Enter your password"
+        value={password}
+        onChangeText={(password) => setPassword(password)}
+        secureTextEntry={true}
+      />
+      <Pressable style={styles.buttonStyle}>
+        <Button
+          title="Login"
+          onPress={handlePressLogin}
+        />
+      </Pressable>
+      <Text style={styles.infoText}>Not having account yet? Create your cheer with me account and start meeting your friend for a drink!</Text>
+      <Pressable style={styles.buttonStyle}>
+        <Button
+          title="Register"
+          onPress={() => navigation.navigate('Register')}
+        />
+      </Pressable>
+    </View>
+  );
 }

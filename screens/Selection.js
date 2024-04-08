@@ -4,10 +4,7 @@ import {
   Text,
   Image,
   TouchableOpacity,
-  Button,
-  Platform,
-  // DatePickerAndroid,
-  //TimePickerAndroid,
+  Platform
 } from "react-native";
 import styles from "../style/SelectionStyle";
 import DateTimePicker from "@react-native-community/datetimepicker";
@@ -142,15 +139,15 @@ export default function Selection() {
 
   // click for photo
   const drinks = [
-    { id: 1, image: require("../assets/logo.png") },
-    { id: 2, image: require("../assets/logo.png") },
-    { id: 3, image: require("../assets/logo.png") },
-    { id: 4, image: require("../assets/logo.png") },
-    { id: 5, image: require("../assets/logo.png") },
-    { id: 6, image: require("../assets/logo.png") },
-    { id: 7, image: require("../assets/logo.png") },
-    { id: 8, image: require("../assets/logo.png") },
-    { id: 9, image: require("../assets/logo.png") },
+    { id: 1, image: require("../assets/Icon1.png") },
+    { id: 2, image: require("../assets/Icon2.png") },
+    { id: 3, image: require("../assets/Icon3.png") },
+    { id: 4, image: require("../assets/Icon4.png") },
+    { id: 5, image: require("../assets/Icon5.png") },
+    { id: 6, image: require("../assets/Icon6.png") },
+    { id: 7, image: require("../assets/Icon7.png") },
+    { id: 8, image: require("../assets/Icon8.png") },
+    { id: 9, image: require("../assets/Icon9.png") },
   ];
 
   const navigation = useNavigation();
