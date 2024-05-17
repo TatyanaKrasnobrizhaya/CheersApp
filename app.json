@@ -4,9 +4,12 @@
     "slug": "Cheers",
     "version": "1.0.0",
     "orientation": "portrait",
+<<<<<<< HEAD
     "permissions": ["CAMERA_ROLL"],
     "platforms": ["ios", "android"],
     "sdkVersion": "49.0.0",
+=======
+>>>>>>> 263df93ab4008336b5454c0d0ccead5c7dbbd356
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -14,14 +17,27 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+<<<<<<< HEAD
     "assetBundlePatterns": ["**/*"],
+=======
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+>>>>>>> 263df93ab4008336b5454c0d0ccead5c7dbbd356
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
+<<<<<<< HEAD
         "backgroundColor": "#ffffff"
+=======
+        "backgroundColor": "#FFFFFF"
+>>>>>>> 263df93ab4008336b5454c0d0ccead5c7dbbd356
       }
     },
     "web": {
